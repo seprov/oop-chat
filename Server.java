@@ -6,10 +6,10 @@ stores all users and conversations
 listens for sends
 updates appropriate windows on send
   those windows are listening for update command
-
  */
+
 public class Server {
-  List<User> userList = new ArrayList<User>();
+  List<User> userList = new ArrayList<>();
   HashMap<ParticipantGroup, Chat> chatList = new HashMap<>();
   WindowManager wm = new WindowManager(this);
 
@@ -72,7 +72,7 @@ public class Server {
   }
   public void deleteUser(String s) {
     for(User u : userList) {
-      if(u.getName() == s) {
+      if(u.getName().equals(s)) {
         updateDeletedUserChats(u);
         userList.remove(u);
 
@@ -81,17 +81,14 @@ public class Server {
   }
 
   public void updateDeletedUserChats(User u){
-
+    // does nothing right now
   }
-
   public User getUser(String s) {
     for (User u : userList) {
-      if (u.getName() == s) {
+      if (u.getName().equals(s)) {
         return u;
       }
     }
     return new User(s,this); // this should never happen
   }
-
-
 }

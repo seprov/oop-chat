@@ -15,7 +15,6 @@ import java.util.Random;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-//import java.awt.event.WindowEvent;
 
 public class Client {
   String windowName;
@@ -25,10 +24,9 @@ public class Client {
     user = u;
     windowName = "User: " + user.getName();
     host = h;
-    drawClient();
+    drawClientWindow();
   }
-  public void drawClient() {
-    //do window stuff here
+  public void drawClientWindow() {
     JFrame frame = new JFrame(windowName);
     frame.setSize(500,100);
     frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
@@ -42,8 +40,7 @@ public class Client {
         ParticipantGroup participants = new ParticipantGroup();
         JFrame participantSelector = new JFrame("Start chat");
         participantSelector.setSize(500,300);
-        //participantSelector.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        //JPanel ps = new JPanel(new BorderLayout());
+
         JList<String> userList = new JList<>(host.ListUsernames(user));
         userList.setSize(100,100);
         userList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
@@ -52,7 +49,6 @@ public class Client {
         for (String s : userList.getSelectedValuesList()) {
           participants.addParticipant(host.getUser(s));
         }
-        //participants = participants.checkIfUnique();
 
         startChat(participants);
       }
@@ -107,8 +103,5 @@ public class Client {
   }
   public void startChat(ParticipantGroup p) {
     host.hostChat(p, user);
-    //JFrame chatWindow = new JFrame("Chat with " + participantTitle);
-    //chatWindow.setSize(500,800);
-    //chatWindow.setVisible(true);
   }
 }

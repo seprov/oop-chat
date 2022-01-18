@@ -1,6 +1,4 @@
 /*
-hmm what should this have?
-
  */
 public class User {
   String username;

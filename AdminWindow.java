@@ -17,7 +17,6 @@ public class AdminWindow {
   AdminWindow(Server h){
     host=h;
     JFrame frame = new JFrame(windowName);
-    //JFrame.setDefaultLookAndFeelDecorated(true);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setSize(300,300);
     frame.setLocationRelativeTo(null);
@@ -29,7 +28,7 @@ public class AdminWindow {
     addUserB.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        h.addUser(new User((String)JOptionPane.showInputDialog(frame,
+        h.addUser(new User(JOptionPane.showInputDialog(frame,
             "Enter the user's name.",null),h ));
       }
     });
@@ -47,7 +46,7 @@ public class AdminWindow {
             possibilities,
             null);
             //tell windowmanager to close userr's windows
-              //each jframe will close
+            //each jframe will close
         h.deleteUser(s);
       }
     });
@@ -57,14 +56,8 @@ public class AdminWindow {
 
     p.add(buttonPanel, BorderLayout.CENTER);
 
-
-
     JPanel userListPanel = new JPanel();
-    TextField userList = new TextField("No one's here yet!");
     p.add(userListPanel, BorderLayout.WEST);
-
-
-
 
     frame.add(p);
     frame.setVisible(true);

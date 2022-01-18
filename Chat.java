@@ -5,14 +5,12 @@
     user a and user b
     users a, b, and c
     etc
-
  */
-import javax.swing.text.Document;
+
 import java.util.*;
 public class Chat {
-  // merge participant and chat classes
 
-  LinkedList<Message> messages = new LinkedList<Message>();
+  LinkedList<Message> messages = new LinkedList<>();
   ParticipantGroup participants;
 
   Chat(Server h) {
@@ -23,10 +21,7 @@ public class Chat {
     participants = p;
   }
 
-  public void addMessage(Message m) {
-    messages.addLast(m);
-
-  }
+  public void addMessage(Message m) { messages.addLast(m); }
 
   public String generateMessageFeed() {
     String mf = "";

@@ -5,7 +5,6 @@
  */
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,13 +17,6 @@ public class ChatWindow {
   User user; // the chat is from this user's perspective
   Chat chat;
   JTextArea chatArea = new JTextArea();
-
-  // need participants
-
-  ChatWindow() {
-    // ChatWindow("default");
-    // why doesn't this work?
-  }
 
   ChatWindow(String wn, Chat c, Server h, User u) {
     host = h;
@@ -49,19 +41,14 @@ public class ChatWindow {
         h.sendMessage(user, messageField.getText(), chat);
         messageField.setText("");
         updateChatFeed();
-
-
       }
     });
-    //chatArea.setSize(500,600);
-    //chatAreaPanel.setSize(500,600);
-    //scrollingChatArea.setSize(500,600);
+
     updateChatFeed();
 
     chatAreaPanel.add(scrollingChatArea, BorderLayout.CENTER);
     frame.add(chatAreaPanel, BorderLayout.CENTER);
 
-    //sendButton.setSize(200,200);
     messageAndSendPanel.add(messageField, BorderLayout.CENTER);
     messageAndSendPanel.add(sendButton, BorderLayout.EAST);
     frame.add(messageAndSendPanel, BorderLayout.SOUTH);
@@ -84,7 +71,5 @@ public class ChatWindow {
     chatArea.setText(chat.generateMessageFeed());
     chatArea.revalidate();
     chatArea.repaint();
-
   }
-
 }

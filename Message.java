@@ -28,6 +28,5 @@ public class Message {
         .withZone(ZoneId.systemDefault());
 
     return dtf.format(timeSent);
-
   }
 }

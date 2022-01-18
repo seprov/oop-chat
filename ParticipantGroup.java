@@ -26,40 +26,4 @@ public class ParticipantGroup {
     }
     return pnames.toArray(new String[0]);
   }
-    /*ParticipantGroup(User... p) {
-
-    for(User u : p) {
-      participants.add(u);
-    }
-
-  }
-  ParticipantGroup(String... usernames) {
-    for(String s : usernames) {
-
-    }
-  }*/
-/*
-  public ParticipantGroup checkIfUnique() {
-    ParticipantGroup pg = this;
-
-    return pg;
-  }*/
-
-  /*public boolean isTheSameParticipantGroupAs(ParticipantGroup that) {
-    boolean participantsAreTheSame = true;
-
-    for (User u : that.participants) {
-      if (!this.hasUser(u)) {
-        participantsAreTheSame = false;
-      }
-    }
-    for (User u : this.participants) {
-      if(!that.hasUser(u)) {
-        participantsAreTheSame = false;
-      }
-    }
-
-    return participantsAreTheSame;
-
-  }*/
 }
